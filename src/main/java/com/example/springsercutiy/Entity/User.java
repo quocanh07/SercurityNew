@@ -70,4 +70,13 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public User(Long id, String full_name, String user_name, String email, String password, Set<Role> roles) {
+        this.id = id;
+        this.full_name = full_name;
+        this.user_name = user_name;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
 }

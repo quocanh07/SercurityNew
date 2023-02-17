@@ -17,7 +17,7 @@ import java.util.Set;
 @Setter
 @Data
 @NoArgsConstructor
-@Table(name = "Users")
+@Table(name = "Roles")
 public class Role {
     @Id
     @SequenceGenerator(name ="roles_sequence",sequenceName = "roles_sequence",allocationSize = 1)
@@ -32,4 +32,15 @@ public class Role {
    @Fetch(value = FetchMode.SELECT)
    @JsonIgnore
     private Set<User> user = new HashSet<>();
+
+    public Role(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Role(String name) {
+        this.name = name;
+    }
+
+
 }
